@@ -1,0 +1,38 @@
+{
+  "name": "monorepo-template",
+  "version": "0.0.1",
+  "description": "Express, React Monorepo",
+  "main": "index.js",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint:back": "eslint apps/back/src --fix --ext .ts",
+    "lint:front": "eslint apps/front/src --fix --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "lint:all": "npm run lint:back && npm run lint:front"
+  },
+  "keywords": [
+    "Monorepo",
+    "javascript",
+    "typescript",
+    "node",
+    "express",
+    "turborepo",
+    "husky",
+    "eslint",
+    "precommit",
+    "react",
+    "vite"
+  ],
+  "author": "Daniel Flores",
+  "license": "MIT",
+  "devDependencies": {
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8",
+    "turbo": "^1.10.1",
+    "typescript": "^5.1.3"
+  }
+}
